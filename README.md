@@ -82,9 +82,9 @@ export default {
 ### 截图预览
 
 ![首页](https://images.gitee.com/uploads/images/2020/0722/194832_8b05a480_5641265.png "1.png")![About Me](https://images.gitee.com/uploads/images/2020/0722/194851_9fc98b82_5641265.png "2.png")![My Services](https://images.gitee.com/uploads/images/2020/0722/194909_f35f4738_5641265.png "3.png")![My Mastering](https://images.gitee.com/uploads/images/2020/0722/195119_1e54b805_5641265.png "4.png")![My Production](https://images.gitee.com/uploads/images/2020/0722/194926_268983f1_5641265.png "5.png")![结尾页](https://images.gitee.com/uploads/images/2020/0722/194947_d623e840_5641265.png "6.png")
-(src/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230707225029.png)![后台]
-(src/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230707225052.png)![后台]
-(src/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230707225113.png)![后台]
+![后台](src/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230707225029.png)
+![后台](src/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230707225052.png)
+![后台](src/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230707225113.png)
 
 #### 联系我：远程调试/二次开发/毕设
 
