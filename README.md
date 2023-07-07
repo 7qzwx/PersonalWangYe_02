@@ -11,8 +11,8 @@ web前端个人简历：一个追梦在前端路上的小白
 #### 在线预览
 [web前端个人简历：一个追梦在前端路上的小白](http://wttandroid.gitee.io/wttandroid.github.io/)
 
-#### 加后台管理的源码
-- +wx有偿
+#### 源码
+- 后台管理：有偿源码  +wx:wtt1457321681
 
 #### 使用说明
 1.  修改src/config.js内容作为配置文件
