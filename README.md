@@ -12,7 +12,7 @@ web前端个人简历：一个追梦在前端路上的小白
 [web前端个人简历：一个追梦在前端路上的小白](http://wttandroid.gitee.io/wttandroid.github.io/)
 
 #### 源码
-- 后台管理：有偿源码  +wx:wtt1457321681
+- 后台管理：+wx:wtt1457321681
 
 #### 使用说明
 1.  修改src/config.js内容作为配置文件
@@ -89,5 +89,6 @@ export default {
 
 
 #### 联系我：远程调试/二次开发/毕设
-
 ![远程调试/二次开发/毕设](https://gitee.com/wttAndroid/online-learning-platform/raw/master/public/static/weixin.jpg)
+#### 感谢支持 
+![感谢悬赏](img/project/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230707234604.jpg)
