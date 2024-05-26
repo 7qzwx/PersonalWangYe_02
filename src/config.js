@@ -6,7 +6,7 @@ export default {
   },
   // page2部分
   page2: {
-    authorImg: "/src/img/QZWXlogo.png", // 作者头像
+    authorImg: "XXX", // 作者头像    在main.html中修改！！
     xinhui: "我叫七种文学，是一名在读的大二学生。", // 幸会
     qiuzhi: "腾讯公司CEO", // 求职意向
     guanyuwo: "能走路，会刷抖音，能玩游戏【真实情况这里写人生经历】", // 关于我
@@ -125,7 +125,7 @@ export default {
     {
       title: "视频创作",
       content: "用AE，剪映等软件所创作的视频合集",
-      image: "壁纸1.png",
+      image: "bizhi1.png",
       href: "",
     },
     {

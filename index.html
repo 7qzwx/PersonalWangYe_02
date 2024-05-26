@@ -44,7 +44,6 @@
 
 
 
-
 <audio id="myAudio" controls style="display:none;">
   <source src="./src/Chance.mp3" type="audio/mpeg">
   您的浏览器不支持 audio 元素。
@@ -55,15 +54,17 @@
 <script>
   var audio = document.getElementById('myAudio');
 
-  // 当页面加载完成后自动播放音乐
+  // 页面加载时，不再尝试自动播放音频
   window.onload = function () {
-    audio.play();
+    // audio.play(); // 注释掉自动播放的代码
   };
 
   // 切换播放和暂停
   function togglePlay() {
     if (audio.paused) {
-      audio.play();
+      audio.play().catch(error => {
+        console.log('Play failed:', error);
+      });
       document.getElementById('music-btn').innerText = '暂停音乐';
     } else {
       audio.pause();
@@ -76,7 +77,6 @@
     document.getElementById('music-btn').innerText = '播放音乐';
   });
 </script>
-
 
 
 
