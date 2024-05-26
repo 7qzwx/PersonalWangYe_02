@@ -108,39 +108,12 @@ export default {
       },
     ],
   },
-  // page5部分     herf放你需要跳转的连接
-  page5: [
-    {
-      title: "XX项目",
-      content: "用了XX方式创造出XX作品合集",
-      image: "box3.jpg",
-      href: "",
-    },
-    {
-      title: "音乐二创",
-      content: "利用AU等软件创作改编出的音乐合集",
-      image: "box5.jpg",
-      href: "",
-    },
-    {
-      title: "视频创作",
-      content: "用AE，剪映等软件所创作的视频合集",
-      image: "bizhi1.png",
-      href: "",
-    },
-    {
-      title: "个人简历",
-      content: "html,css,jq,bootsrap搭建个人简历网站合集",
-      image: "box4.png",
-      href: "",
-    },
-    {
-      title: "开发的APP",
-      content: "自主钻研利用Androidstudio开发软合集",
-      image: "box6.jpeg",
-      href: "",
-    },
-  ],
+
+  // page5部分     
+  // 到main.html文件中修改！！
+  // 到main.html文件中修改！！
+  // 到main.html文件中修改！！
+
   // page6部分
   page6: {
     github: "https://github.com/7qzwx",

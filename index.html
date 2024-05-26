@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport"
@@ -18,182 +19,173 @@
   <!--    自己的CSS压缩版-->
 
 
-
-
-<style>
-  #music-btn {
-    display: block;
-    width: 100px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #000;
-    border-radius: 5px;
-    margin: 20px auto;
-  }
-</style>
-
-
-
-
-
+  <style>
+    #music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: block;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid #000;
+      border-radius: 5px;
+      z-index: 999;
+    }
+  </style>
 </head>
 
 <body>
 
+  <audio id="myAudio" controls style="display:none;">
+    <source src="src/Chance.mp3" type="audio/mpeg">
+    您的浏览器不支持 audio 元素。
+  </audio>
 
+  <div id="music-btn" onclick="togglePlay()">播放音乐</div>
 
-<audio id="myAudio" controls style="display:none;">
-  <source src="./src/Chance.mp3" type="audio/mpeg">
-  您的浏览器不支持 audio 元素。
-</audio>
+  <script>
+    var audio = document.getElementById('myAudio');
 
-<div id="music-btn" onclick="togglePlay()">播放音乐</div>
-
-<script>
-  var audio = document.getElementById('myAudio');
-
-  // 页面加载时，不再尝试自动播放音频
-  window.onload = function () {
-    // audio.play(); // 注释掉自动播放的代码
-  };
-
-  // 切换播放和暂停
-  function togglePlay() {
-    if (audio.paused) {
-      audio.play().catch(error => {
-        console.log('Play failed:', error);
-      });
-      document.getElementById('music-btn').innerText = '暂停音乐';
-    } else {
-      audio.pause();
-      document.getElementById('music-btn').innerText = '播放音乐';
-    }
-  }
-
-  // 监听音乐播放结束事件
-  audio.addEventListener('ended', function () {
-    document.getElementById('music-btn').innerText = '播放音乐';
-  });
-</script>
-
-
-
-
-  <!-- ---------------JS--------------------- -->
-  <script src="lib/less.min.js"></script>
-  <!--  less-->
-  <script src="lib/jquery.min.js"></script>
-  <!-- jq,bootsrap-->
-  <script src="lib/bootstrap.min.js"></script>
-
-  <script src="lib/handlebars.min.js"></script>
-  <!-- 模板引擎js -->
-  <script src="lib/lizi/particless.min.js"></script>
-  <!-- 粒子js -->
-  <!-- <link rel="import" href="html/main.html" id="boxs" /> -->
-
-  <!--主要内容html -->
-  <div id="box"></div>
-
-  <script type="module" crossorigin="use-credentials">
-    import configData from "./src/config.js"; //加载配置文件
-    var arrMastering = configData.page4.proresslist; //部分模块数据的动态渲染
-
-    $("#box").load("html/main.html", function () {
-      //1、渲染模板
-      var html = $("#box").html(); //获取内容模板
-      var template = Handlebars.compile(html); //编译
-      var htmls = template(configData); //渲染模板
-      $("#box").html(htmls); //写入模板
-
-      //2、事件监听
-      particlesJS.load("particles", "lib/lizi/particles.json", function () {
-        //加载粒子
-        console.log("callback - particles.js config loaded");
-      });
-
-      arrMastering = configData.page4.proresslist; //部分模块数据的动态渲染
-
-      window.addEventListener("scroll", scrollEvent); //对window滚动的监听
-      bindEvenInit(); //锚点定位初始化
-    });
-
-    // 原生link import兼容性检测代码
-    function supportsImports() {
-      return "import" in document.createElement("link");
-    }
-    //锚点定位初始化
-    function bindEvenInit() {
-      $(".navbtn").bind("click touch", function () {
-        //scrollTop 滚动到  $(this).attr('href')锚点关联id所在位置
-        $("html,body").animate(
-          { scrollTop: $($(this).attr("href")).offset().top },
-          500
-        );
-        return false;
-      });
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-      $(".element").on("click", function () {
-        $(this).popover("toggle");
-      });
-
-      $("#slideBut").on("click touch", function () {
-        $("#slideList").slideToggle(1000);
-      });
-
-      $(".navbtn").click(function () {
-        $("#slideList").css("display", "none");
-      });
-    }
-    //播放音乐初始化方法
-   
-
-    //删除元素方法
-    function removeElement(_element) {
-      var _parentElement = _element.parentNode;
-      if (_parentElement) {
-        _parentElement.removeChild(_element);
+    // 切换播放和暂停
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play().catch(error => {
+          console.log('Play failed:', error);
+        });
+        document.getElementById('music-btn').innerText = '暂停音乐';
+      } else {
+        audio.pause();
+        document.getElementById('music-btn').innerText = '播放音乐';
       }
     }
-    //滚动事件监听
-    function scrollEvent() {
-      var vues = this;
-      var a, b, c;
-      a = $(window).height(); //页面高度
-      b = $(window).scrollTop(); //获取滚动高度
 
-      $(".page").each(function () {
-        c = $(this).offset().top;
-        var tag = true;
-        if (a + b - 120 > c) {
-          if (!$(this).find(".container").hasClass("animateload")) {
-            $(this).find(".container").addClass("animateload");
-          }
-
-          if ($(this)[0].id == "page4" || tag) {
-            tag = false;
-            $(this)
-              .find(".proress")
-              .each(function (i, n) {
-                $(this).find(".bar-propress")[0].style.width =
-                  arrMastering[i].value;
-                $(this).find(".propress-title").text(arrMastering[i].title);
-                $(this)
-                  .find(".bar-propress")
-                  .children("span")
-                  .text(arrMastering[i].value);
-              });
-          }
-        } else {
-          // if($(this).find('.container').hasClass('animateload')) {$(this).find('.container').removeClass('animateload')}
-        }
-      });
-    }
+    // 监听音乐播放结束事件
+    audio.addEventListener('ended', function () {
+      document.getElementById('music-btn').innerText = '播放音乐';
+    });
   </script>
+</body>
+
+
+
+
+
+<!-- ---------------JS--------------------- -->
+<script src="lib/less.min.js"></script>
+<!--  less-->
+<script src="lib/jquery.min.js"></script>
+<!-- jq,bootsrap-->
+<script src="lib/bootstrap.min.js"></script>
+
+<script src="lib/handlebars.min.js"></script>
+<!-- 模板引擎js -->
+<script src="lib/lizi/particless.min.js"></script>
+<!-- 粒子js -->
+<!-- <link rel="import" href="html/main.html" id="boxs" /> -->
+
+<!--主要内容html -->
+<div id="box"></div>
+
+<script type="module" crossorigin="use-credentials">
+  import configData from "./src/config.js"; //加载配置文件
+  var arrMastering = configData.page4.proresslist; //部分模块数据的动态渲染
+
+  $("#box").load("html/main.html", function () {
+    //1、渲染模板
+    var html = $("#box").html(); //获取内容模板
+    var template = Handlebars.compile(html); //编译
+    var htmls = template(configData); //渲染模板
+    $("#box").html(htmls); //写入模板
+
+    //2、事件监听
+    particlesJS.load("particles", "lib/lizi/particles.json", function () {
+      //加载粒子
+      console.log("callback - particles.js config loaded");
+    });
+
+    arrMastering = configData.page4.proresslist; //部分模块数据的动态渲染
+
+    window.addEventListener("scroll", scrollEvent); //对window滚动的监听
+    bindEvenInit(); //锚点定位初始化
+  });
+
+  // 原生link import兼容性检测代码
+  function supportsImports() {
+    return "import" in document.createElement("link");
+  }
+  //锚点定位初始化
+  function bindEvenInit() {
+    $(".navbtn").bind("click touch", function () {
+      //scrollTop 滚动到  $(this).attr('href')锚点关联id所在位置
+      $("html,body").animate(
+        { scrollTop: $($(this).attr("href")).offset().top },
+        500
+      );
+      return false;
+    });
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+    $(".element").on("click", function () {
+      $(this).popover("toggle");
+    });
+
+    $("#slideBut").on("click touch", function () {
+      $("#slideList").slideToggle(1000);
+    });
+
+    $(".navbtn").click(function () {
+      $("#slideList").css("display", "none");
+    });
+  }
+  //播放音乐初始化方法
+
+
+  //删除元素方法
+  function removeElement(_element) {
+    var _parentElement = _element.parentNode;
+    if (_parentElement) {
+      _parentElement.removeChild(_element);
+    }
+  }
+  //滚动事件监听
+  function scrollEvent() {
+    var vues = this;
+    var a, b, c;
+    a = $(window).height(); //页面高度
+    b = $(window).scrollTop(); //获取滚动高度
+
+    $(".page").each(function () {
+      c = $(this).offset().top;
+      var tag = true;
+      if (a + b - 120 > c) {
+        if (!$(this).find(".container").hasClass("animateload")) {
+          $(this).find(".container").addClass("animateload");
+        }
+
+        if ($(this)[0].id == "page4" || tag) {
+          tag = false;
+          $(this)
+            .find(".proress")
+            .each(function (i, n) {
+              $(this).find(".bar-propress")[0].style.width =
+                arrMastering[i].value;
+              $(this).find(".propress-title").text(arrMastering[i].title);
+              $(this)
+                .find(".bar-propress")
+                .children("span")
+                .text(arrMastering[i].value);
+            });
+        }
+      } else {
+        // if($(this).find('.container').hasClass('animateload')) {$(this).find('.container').removeClass('animateload')}
+      }
+    });
+  }
+</script>
 </body>
 
 </html>

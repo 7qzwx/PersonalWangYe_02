@@ -7,7 +7,8 @@
           <div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 box-page">
             <h1>{{page1.titleEn}}</h1>
             <p class="box-info">{{page1.title}}</p>
-            <p class="box-font">I hope I could keep advancing and let my life shine as a precious stone.<span class="box-change">and let my life shine as a precious stone.</span></p>
+            <p class="box-font">I hope I could keep advancing and let my life shine as a precious stone.<span
+                class="box-change">and let my life shine as a precious stone.</span></p>
           </div>
         </div>
         <a class="next-bt navbtn" href="#next-one"><span>Read more</span></a>
@@ -20,10 +21,10 @@
         <div class="row">
           <div class="col-xs-12 col-md-5">
             <div class="box-image">
-            
+
               <!-- 在这里修改作者头像 -->
-              <img src="../src/img/QZWXlogo.png">  
-              
+              <img src="../src/img/QZWXlogo.png">
+
             </div>
           </div>
           <div class="col-xs-12 col-md-7 box-info">
@@ -115,24 +116,88 @@
       </div>
     </div>
 
+    <!-- 下面page5代码 -->
+
     <div class="page page5" id="page5" name="page5">
       <div class="page3-box container">
-        <h1 class="page-title">My Production </h1>
-        <div class="row">
-          {{#each page5}}
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <a class="box-item" href="{{this.href}}">
-              <div class="item-zhez">
-                <h4>{{this.title}}</h4>
-                <P>{{this.content}}</P>
-              </div>
-              <img src="./src/img/{{this.image}}">
-            </a>
-          </div>
-          {{/each}}
+        <h1 class="page-title">My Production</h1>
+        <div class="row" id="page5-container">
         </div>
       </div>
     </div>
+
+    <script>
+      // 数据源   在这里添加数据！！！   herf放你需要跳转的连接
+      // 数据源   在这里添加数据！！！
+      // 数据源   在这里添加数据！！！
+      var page5 = [
+        {
+          title: "XX项目",
+          content: "用了XX方式创造出XX作品合集",
+          image: "box3.jpg",
+          href: "",
+        },
+        {
+          title: "音乐二创",
+          content: "利用AU等软件创作改编出的音乐合集",
+          image: "box5.jpg",
+          href: "",
+        },
+        {
+          title: "视频创作",
+          content: "用AE，剪映等软件所创作的视频合集",
+          image: "bizhi1.png",
+          href: "",
+        },
+        {
+          title: "个人简历",
+          content: "html,css,jq,bootsrap搭建个人简历网站合集",
+          image: "box4.png",
+          href: "",
+        },
+        {
+          title: "开发的APP",
+          content: "自主钻研利用Androidstudio开发软合集",
+          image: "box6.jpeg",
+          href: "",
+        },
+      ];
+
+      // 上面到这里截至，下面是处理代码 
+      var baseUrl = "./src/img/";
+      var container = document.getElementById("page5-container");
+      container.innerHTML = '';
+      page5.forEach(function (item) {
+        var boxItem = document.createElement("div");
+        boxItem.className = "col-lg-4 col-md-6 col-sm-12";
+        var link = document.createElement("a");
+        link.className = "box-item";
+        link.href = item.href;
+        var itemZhez = document.createElement("div");
+        itemZhez.className = "item-zhez";
+
+        var title = document.createElement("h4");
+        title.textContent = item.title;
+
+        var content = document.createElement("p");
+        content.textContent = item.content;
+
+        var image = document.createElement("img");
+        image.src = baseUrl + item.image;
+
+        itemZhez.appendChild(title);
+        itemZhez.appendChild(content);
+
+        link.appendChild(itemZhez);
+        link.appendChild(image);
+
+        boxItem.appendChild(link);
+        container.appendChild(boxItem);
+      });
+    </script>
+
+    <!-- 下面page6代码 -->
+
 
     <div class="page page6" id="page6" name="page6">
       <div class="page3-box container">
@@ -159,15 +224,17 @@
                       class="iconfont icon-youxiang"></i></a></li>
 
                 <li><a class="element" role="button" data-placement="top" tabindex="0" data-toggle="popover"
-                    data-trigger="focus" title="我的微信" data-html="true" data-content="{{page6.weixin}}"><i class="iconfont icon-weixin1"></i></a></li>
+                    data-trigger="focus" title="我的微信" data-html="true" data-content="{{page6.weixin}}"><i
+                      class="iconfont icon-weixin1"></i></a></li>
                 <li><a class="element" role="button" data-placement="top" tabindex="1" data-toggle="popover"
-                    data-trigger="focus" data-html="true" title="我的QQ" data-content="{{page6.qq}}"><i class="iconfont icon-qq"></i></a></li>
-             
+                    data-trigger="focus" data-html="true" title="我的QQ" data-content="{{page6.qq}}"><i
+                      class="iconfont icon-qq"></i></a></li>
+
                 <li>
-  <a role="button" href="{{page6.douyin}}" data-toggle="tooltip" data-placement="top" title="抖音">
-    <img src="../src/img/douyin-copy.png" alt="抖音图标" class="icon-douyin">
-  </a>
-</li>
+                  <a role="button" href="{{page6.douyin}}" data-toggle="tooltip" data-placement="top" title="抖音">
+                    <img src="../src/img/douyin-copy.png" alt="抖音图标" class="icon-douyin">
+                  </a>
+                </li>
 
               </ul>
             </div>
@@ -188,9 +255,7 @@
         <a class="navbtn" href="#page5"></a>
         <a class="navbtn" href="#page6"></a>
       </div>
-            <!-- 取消了播放音乐模块     -->
 
-      
     </div>
     <div id="navbar-banner">
       <div class="container">
