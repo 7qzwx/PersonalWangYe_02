@@ -55,8 +55,13 @@
     content: "\e606";
 }
 
-.icon-zhihu-copy:before {
-    content: "\e601";
+.icon-douyin {
+    width: 38px;
+    /* 设置图片宽度 */
+    height: 38px;
+    /* 设置图片高度 */
+    vertical-align: text-bottom;
+    /* 垂直居中对齐 */
 }
 
 .icon-bilibili:before {
