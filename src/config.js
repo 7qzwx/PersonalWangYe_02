@@ -6,7 +6,7 @@ export default {
   },
   // page2部分
   page2: {
-    authorImg: "七种文学logo.png", // 作者头像
+    authorImg: "/src/img/QZWXlogo.png", // 作者头像
     xinhui: "我叫七种文学，是一名在读的大二学生。", // 幸会
     qiuzhi: "腾讯公司CEO", // 求职意向
     guanyuwo: "能走路，会刷抖音，能玩游戏【真实情况这里写人生经历】", // 关于我
@@ -148,7 +148,7 @@ export default {
     email: "Mailto:3117965903@qq.com?Subject=邮箱标题&Body=邮箱内容！",
     douyin: "https://www.douyin.com/user/self",
     weixin:
-      "<img style='width:120px' src='../src/img/七种文学QQ二维码.jpg' alt='wx二维码'>",
-    qq: "<img style='width:120px' src='../src/img/七种文学QQ二维码.jpg' alt='QQ二维码'>",
+      "<img style='width:120px' src='../src/img/QZWX-QQ.jpg' alt='wx二维码'>",
+    qq: "<img style='width:120px' src='../src/img/QZWX-QQ.jpg' alt='QQ二维码'>",
   },
 };

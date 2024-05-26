@@ -109,7 +109,7 @@
 }
 
 body {
-  background-image: url("/src/img/壁纸2.png");
+  background-image: url("/src/img/bizhi2.png");
   background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -120,7 +120,7 @@ body {
 /* 媒体查询，适用于手机端 */
 @media only screen and (max-width: 768px) {
   body {
-    background-image: url("/src/img/手机壁纸1.png");
+    background-image: url("/src/img/ShouoJibizhi.png");
   }
 }
 
