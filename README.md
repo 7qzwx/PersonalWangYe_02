@@ -1,3 +1,7 @@
+本地使用方法：命令行输入 node QZWX-CORS.js    
+             然后浏览器 http://localhost:3000  
+
+
 # web前端个人简历
 
 #### 介绍

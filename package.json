@@ -1,0 +1,19 @@
+{
+  "name": "wttandroid.github.io",
+  "version": "1.0.0",
+  "description": "web前端个人简历：一个追梦在前端路上的小白",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
